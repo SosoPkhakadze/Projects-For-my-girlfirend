@@ -1,0 +1,256 @@
+@import url('https://fonts.googleapis.com/css?family=Lovers+Quarrel');
+
+.book {
+  perspective: 1000px;
+  transition: opacity 0.4s 0.2s;
+  width: 60vw;
+  height: 44vw;
+}
+
+.pages {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  border-radius: 4px;
+}
+
+.page {
+  float: none;
+  clear: none;
+  margin: 0;
+  position: absolute;
+  top: 0;
+  width: 30vw;
+  height: 44vw;
+  transform-origin: 0 0;
+  transition: transform 1.4s;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  cursor: pointer;
+  user-select: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.page:nth-child(odd) {
+  pointer-events: all;
+  transform: rotateY(0deg);
+  right: 0;
+  border-radius: 2px 8px 8px 2px;
+  background-image: linear-gradient(to right, rgba(0,0,0,.15) 0%, rgba(0,0,0,0) 10%);
+}
+
+.page:nth-child(odd):hover {
+  transform: rotateY(-15deg);
+}
+
+.page:nth-child(even) {
+  pointer-events: none;
+  transform: rotateY(180deg);
+  transform-origin: 100% 0;
+  left: 0;
+  border-radius: 4px 0 0 4px;
+  background-image: linear-gradient(to left, rgba(0,0,0,.12) 0%, rgba(0,0,0,0) 10%);
+}
+
+.page.flipped:nth-child(odd) {
+  pointer-events: none;
+  transform: rotateY(-180deg);
+}
+
+.page.flipped:nth-child(even) {
+  pointer-events: all;
+  transform: rotateY(0deg);
+}
+
+.page.flipped:nth-child(even):hover {
+  transform: rotateY(15deg);
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: 'Lovers Quarrel', cursive;
+  background: #333;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  background-color: #f5f5f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: radial-gradient(circle, #9b2c2c, #4d1515);
+  background-size: cover;
+  animation: twinklingStars 20s linear infinite;
+}
+
+.page:nth-child(odd) {
+  background-image: linear-gradient(135deg, #921921 0%, #680381 100%);
+}
+
+.page:nth-child(even) {
+  background-image: linear-gradient(-45deg, #942175 0%, #6c154c 100%);
+}
+
+.page:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+.images-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: 100%;
+}
+
+.image-box {
+  max-width: 80%;
+  max-height: 40%;
+  background-color: #ccc;
+  border: 1px solid #999;
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 10px;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative; 
+}
+
+.image-box img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+}
+
+.content {
+  text-align: center;
+  padding: 20px;
+  font-family: 'Lovers Quarrel', cursive;
+  font-size: 5vw;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  font-family: 'Great Vibes', cursive;
+  font-size: 4vw;
+}
+
+p {
+  margin-top: 8vw;
+}
+
+body {
+  overflow: hidden;
+  background: radial-gradient(circle, #663399, #330033);
+  background-size: cover;
+  animation: twinklingStars 20s linear infinite;
+}
+.wrapper {
+  width: 100%;
+  background: url('your-romantic-background-image.jpg') no-repeat center center fixed;
+  background-size: cover;
+  min-height: 100%;
+  overflow: hidden;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.x1 { left: 5%; top: calc(10% + 90 * rand()); -webkit-transform: scale(0.9); transform: scale(1.9); opacity: 0.6; animation: moveclouds 15s linear infinite, sideWays 4s ease-in-out infinite alternate; }
+.x2 { left: 25%; top: calc(20% + 90 * rand()); -webkit-transform: scale(0.6); transform: scale(1.6); opacity: 0.9; animation: moveclouds 25s linear infinite, sideWays 1.5s ease-in-out infinite alternate; }
+.x3 { left: 55%; top: calc(30% + 90 * rand()); -webkit-transform: scale(0.8); transform: scale(1.8); opacity: 0.8; animation: moveclouds 20s linear infinite, sideWays 4s ease-in-out infinite alternate; }
+.x4 { left: 72%; top: calc(40% + 90 * rand()); -webkit-transform: scale(0.75); transform: scale(1.75); opacity: 0.9; animation: moveclouds 18s linear infinite, sideWays 2s ease-in-out infinite alternate; }
+.x5 { left: 88%; top: calc(50% + 90 * rand()); -webkit-transform: scale(0.8); transform: scale(.8); opacity: 0.3; animation: moveclouds 7s linear infinite, sideWays 1s ease-in-out infinite alternate; }
+.x6 { left: 21%; top: calc(60% + 90 * rand()); -webkit-transform: scale(0.2); transform: scale(1.2); opacity: 0.4; animation: moveclouds 20s linear infinite, sideWays 1.2s ease-in-out infinite alternate; }
+.x7 { left: 10%; top: calc(70% + 90 * rand()); -webkit-transform: scale(0.7); transform: scale(.7); opacity: 0.5; animation: moveclouds 12s linear infinite, sideWays 3s ease-in-out infinite alternate; }
+.x8 { left: 40%; top: calc(80% + 90 * rand()); -webkit-transform: scale(0.5); transform: scale(1.5); opacity: 0.6; animation: moveclouds 18s linear infinite, sideWays 4s ease-in-out infinite alternate; }
+.x9 { left: 60%; top: calc(10% + 90 * rand()); -webkit-transform: scale(0.9); transform: scale(1.9); opacity: 0.7; animation: moveclouds 22s linear infinite, sideWays 3s ease-in-out infinite alternate; }
+.x10 { left: 78%; top: calc(20% + 90 * rand()); -webkit-transform: scale(0.65); transform: scale(0.65); opacity: 0.8; animation: moveclouds 15s linear infinite, sideWays 2s ease-in-out infinite alternate; }
+.x11 { left: 92%; top: calc(30% + 90 * rand()); -webkit-transform: scale(0.75); transform: scale(0.75); opacity: 0.4; animation: moveclouds 10s linear infinite, sideWays 1.5s ease-in-out infinite alternate; }
+.x12 { left: 30%; top: calc(40% + 90 * rand()); -webkit-transform: scale(0.3); transform: scale(0.3); opacity: 0.3; animation: moveclouds 25s linear infinite, sideWays 1.5s ease-in-out infinite alternate; }
+.x13 { left: 50%; top: calc(50% + 90 * rand()); -webkit-transform: scale(0.8); transform: scale(0.8); opacity: 0.9; animation: moveclouds 16s linear infinite, sideWays 3s ease-in-out infinite alternate; }
+.x14 { left: 70%; top: calc(60% + 90 * rand()); -webkit-transform: scale(0.6); transform: scale(1.6); opacity: 0.7; animation: moveclouds 20s linear infinite, sideWays 4s ease-in-out infinite alternate; }
+.x15 { left: 80%; top: calc(70% + 90 * rand()); -webkit-transform: scale(0.85); transform: scale(0.85); opacity: 0.5; animation: moveclouds 14s linear infinite, sideWays 2s ease-in-out infinite alternate; }
+.x16 { left: 15%; top: calc(80% + 90 * rand()); -webkit-transform: scale(0.7); transform: scale(1.7); opacity: 0.6; animation: moveclouds 12s linear infinite, sideWays 3s ease-in-out infinite alternate; }
+.x17 { left: 35%; top: calc(10% + 90 * rand()); -webkit-transform: scale(0.5); transform: scale(0.5); opacity: 0.8; animation: moveclouds 18s linear infinite, sideWays 1.4s ease-in-out infinite alternate; }
+.x18 { left: 65%; top: calc(30% + 90 * rand()); -webkit-transform: scale(0.8); transform: scale(1.8); opacity: 0.8; animation: moveclouds 20s linear infinite, sideWays 4s ease-in-out infinite alternate; }
+.x19 { left: 82%; top: calc(50% + 90 * rand()); -webkit-transform: scale(0.75); transform: scale(0.75); opacity: 0.9; animation: moveclouds 18s linear infinite, sideWays 2s ease-in-out infinite alternate; }
+.x20 { left: 95%; top: calc(70% + 90 * rand()); -webkit-transform: scale(0.8); transform: scale(1.8); opacity: 0.3; animation: moveclouds 7s linear infinite, sideWays 1s ease-in-out infinite alternate; }
+.x21 { left: 18%; top: calc(60% + 90 * rand()); -webkit-transform: scale(0.2); transform: scale(0.2); opacity: 0.4; animation: moveclouds 20s linear infinite, sideWays 2s ease-in-out infinite alternate; }
+.x22 { left: 5%; top: calc(40% + 90 * rand()); -webkit-transform: scale(0.7); transform: scale(0.7); opacity: 0.5; animation: moveclouds 12s linear infinite, sideWays 3s ease-in-out infinite alternate; }
+
+@keyframes moveclouds { 0% { top: 800px; } 100% { top: -500px; } }
+@keyframes sideWays { 0% { margin-left:0px; } 100% { margin-left:50px; } }
+@keyframes swayWays { 0% { transform: rotate(12deg); left:-0.3%; } 33%{ transform: rotate(-2deg); left: 0.7%; } 100% { transform: rotate(0deg); left:-12%; } }
+
+
+.heart {
+  position: absolute;
+  background: url('http://static.indigoimages.ca/2016/shop/113439_img25_twotoneheart.png') no-repeat center;
+  width: 24px;
+  height: 21px;
+}
+
+@keyframes heartBeat {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.heart:before, .heart:after {
+  position: absolute;
+  content: "";
+  left: 18px;
+  top: 0;
+  width: 18px;
+  height: 30px;
+  background: #CC2022;
+  border-radius: 30px 30px 0 0;
+  transform: rotate(-45deg);
+  transform-origin: 0 100%;
+}
+
+.heart:after {
+  left: 0;
+  transform: rotate(45deg);
+  transform-origin: 100% 100%;
+}
+
+.book {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.date {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  padding: 5px;
+  font-size: 12px;
+  border-radius: 4px;
+}
